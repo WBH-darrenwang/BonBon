@@ -1,6 +1,7 @@
 # BonBon
 Google extension to help you become more productive and healthy.<br>
-NOTE: The TimeMe API is not included here. You can find teh scource code here: https://github.com/jasonzissman/TimeMe.js/
+NOTE: The TimeMe API is not included here. You can find the scource code here: https://github.com/jasonzissman/TimeMe.js/<br>
+This project was built in 10 hours and thus, there are A LOT of bad practices. It is not efficient and could be written a lot better.
 
 ## Inspiration
 Everybody procrastinates. The clock never slows down for anyone and by the minute, you lose precious sleep time, study time, etc. I wanted to create a centralized google extension to help people be alert of their deadlines so that their work will always reflect their highest potentials.
