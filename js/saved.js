@@ -25,26 +25,23 @@ chrome.storage.sync.get(['savedText','removeItem'], function(result) {
 				'<a id="'+'t'+i+'" href="'+snip+'" target="_blank" class="p'+remain+'">'+snip+'</a><br><br>');
 		}
 	}
-
 	chrome.storage.sync.set({'savedText': final_urls});
 });
-setTimeout(function(){
-	$('button[id^="b"]').click(function(){
-		var id = $(this).attr('id');
-		
-		chrome.storage.sync.get(['removeItem'], function(result){
-			id = id.substring(1);
-			var get = result.removeItem;
-			get += id + ',';
-			chrome.storage.sync.set({'removeItem': get});
-		});
-		$('#t'+id.substring(1)).hide();
-		$(this).hide();
+	
+$('body').on('click','button[id^="b"]',function(){
+	var id = $(this).attr('id');	
+	chrome.storage.sync.get(['removeItem'], function(result){
+		id = id.substring(1);
+		var get = result.removeItem;
+		get += id + ',';
+		chrome.storage.sync.set({'removeItem': get});
 	});
-	$('a[class^="p"]').click(function(){
-		var pos = $(this).attr('class');
-		pos = pos.substring(1);
-		alert(pos);
-	})
+	$('#t'+id.substring(1)).hide();
+	$(this).hide();
 });
-
+	
+$('a[class^="p"]').click(function(){
+	var pos = $(this).attr('class');
+	pos = pos.substring(1);
+	alert(pos);
+});
