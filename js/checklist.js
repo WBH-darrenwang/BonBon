@@ -29,22 +29,24 @@ $('#add_but').click(function(){
 		var str = $('#input').val();
 		var saved = result.checkItem;
 		var length = saved.length/2; 
-		saved = saved + str + ',';
-		chrome.storage.sync.set({'checkItem':saved});
-		$('#list').append('<input id="c'+length+'" type="checkbox"><a id="t'+length+'">'+str+'</a><br>');
+		if(str.length != 0){
+			saved = saved + str + ',';
+			chrome.storage.sync.set({'checkItem':saved});
+			$('#list').append('<input id="c'+length+'" type="checkbox"><a id="t'+length+'">'+str+'</a><br>');
+		}
 		$('#input').val('');
 	});
 });
-setTimeout(function(){
-	$(':checkbox').change(function() {
-		var id = $(this).attr('id');
-		chrome.storage.sync.get(['checkRemove'],function(result){
-			id = id.substring(1);
-			var get = result.checkRemove;
-			get += id + ',';
-			chrome.storage.sync.set({'checkRemove':get});
-		});
-		$('#t'+id.substring(1)).hide();
-		$(this).hide();  
-	}); 
-});
+
+$('body').on('change',':checkbox',function(){
+	var id = $(this).attr('id');
+	chrome.storage.sync.get(['checkRemove'],function(result){
+		id = id.substring(1);
+		var get = result.checkRemove;
+		get += id + ',';
+		chrome.storage.sync.set({'checkRemove':get});
+	});
+	$('#t'+id.substring(1)).hide();
+	$(this).hide();  
+}); 
+
