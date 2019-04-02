@@ -28,20 +28,26 @@ chrome.storage.sync.get(['savedText','removeItem'], function(result) {
 	chrome.storage.sync.set({'savedText': final_urls});
 });
 	
-$('body').on('click','button[id^="b"]',function(){
-	var id = $(this).attr('id');	
-	chrome.storage.sync.get(['removeItem'], function(result){
-		id = id.substring(1);
-		var get = result.removeItem;
-		get += id + ',';
-		chrome.storage.sync.set({'removeItem': get});
+setTimeout(function(){
+	$('body').on('click','button[id^="b"]',function(){
+		var id = $(this).attr('id');	
+		chrome.storage.sync.get(['removeItem'], function(result){
+			id = id.substring(1);
+			var get = result.removeItem;
+			get += id + ',';
+			chrome.storage.sync.set({'removeItem': get});
+		});
+		$('#t'+id.substring(1)).hide();
+		$(this).hide();
 	});
-	$('#t'+id.substring(1)).hide();
-	$(this).hide();
+		
+	$('a[class^="p"]').click(function(){
+		var pos = $(this).attr('class');
+		pos = pos.substring(1);
+		alert(pos);
+	});
 });
-	
-$('a[class^="p"]').click(function(){
-	var pos = $(this).attr('class');
-	pos = pos.substring(1);
-	alert(pos);
+
+$('#back').click(function(){
+	chrome.browserAction.setPopup({popup: 'html/popup.html'});
 });
