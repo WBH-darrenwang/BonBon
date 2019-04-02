@@ -49,4 +49,6 @@ $('body').on('change',':checkbox',function(){
 	$('#t'+id.substring(1)).hide();
 	$(this).hide();  
 }); 
-
+$('#back').click(function(){
+	chrome.browserAction.setPopup({popup: 'html/popup.html'});
+});
