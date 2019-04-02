@@ -68,3 +68,6 @@ function getText(result){
 	}
 	return text;
 }
+$('#back').click(function(){
+	chrome.browserAction.setPopup({popup: 'html/popup.html'});
+});
