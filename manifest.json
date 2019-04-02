@@ -5,13 +5,14 @@
     "permissions": ["declarativeContent", 
       "storage","commands",
       "tabs",
-      "<all_urls>",
       "alarms",
       "notifications"],
     "background": {
-      "scripts": ["js/background.js","TimeMe.js-master/timeme.js"]
+      "scripts": ["js/background.js",
+      "TimeMe.js-master/timeme.js",
+      "persistent": true]
     },
-    "page_action": {
+    "_execute_browser_action": {
       "default_popup": "html/popup.html",
       "default_icon": {
         "16": "images/get_started16.png",
