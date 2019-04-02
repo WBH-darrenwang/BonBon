@@ -5,6 +5,7 @@
     "permissions": ["declarativeContent", 
       "storage","commands",
       "tabs",
+      "<all_urls>",
       "alarms",
       "notifications"],
     "background": {
