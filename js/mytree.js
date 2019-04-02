@@ -22,11 +22,6 @@ $('#but').click(function(){
 	chrome.storage.sync.set({'reducedSite': url});
 	$('#reduce').val('');
 });
-
-
-
-/*
-	Time API:
-	[{"pageName":"url","timeOnPage":seconds},
-	{"pageName":"url","timeOnPage":seconds}]
-*/
+$('#back').click(function(){
+	chrome.browserAction.setPopup({popup: 'html/popup.html'});
+});
