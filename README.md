@@ -1,6 +1,7 @@
 # BonBon
 Google extension to help you become more productive and healthy.<br><br>
-Youtube: https://www.youtube.com/watch?v=JAGkzgs7_d0 <br><br>
+Youtube: https://www.youtube.com/watch?v=JAGkzgs7_d0 <br>
+Devpost: https://devpost.com/software/bonbon<br><br>
 NOTE: The TimeMe API is not included here. You can find the scource code here: https://github.com/jasonzissman/TimeMe.js/<br>
 This project was built in 10 hours and thus, there are A LOT of bad practices. It is not efficient and could be written a lot better.
 
