@@ -19,9 +19,10 @@ chrome.runtime.onInstalled.addListener(function() {
             actions: [new chrome.declarativeContent.ShowPageAction()]
       }]);
     });
-  chrome.commands.onCommand.addListener(function(){
-    chrome.tabs.executeScript({ file: 'js/getWebText.js'});
-  });
+});
+
+chrome.commands.onCommand.addListener(function(){
+  chrome.tabs.executeScript({ file: 'js/getWebText.js'});
 });
 
 //Alarms
